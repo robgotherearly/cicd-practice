@@ -1,15 +1,44 @@
 # CI/CD Practice Project
 
-A Python project demonstrating a full CI/CD pipeline using GitHub Actions.
+A Python web application demonstrating a full CI/CD pipeline using GitHub Actions.
 
-## Pipeline Features
+## 🚀 Live Demo
+[View Live App](https://cicd-practice-xolu.onrender.com)
+
+## ⚙️ Pipeline Features
 - ✅ Automated testing with pytest on every push
 - ✅ Code style enforcement with flake8
-- ✅ Runs on Ubuntu (cloud) automatically
+- ✅ Matrix builds across Python 3.9, 3.10, and 3.11
+- ✅ Docker image automatically built and pushed to Docker Hub
+- ✅ Automatic deployment to Render on every merge to main
 
-## How it works
+## 🛠️ Tech Stack
+- **Language:** Python 3.11
+- **Web Framework:** Flask
+- **Server:** Gunicorn
+- **Containerisation:** Docker
+- **CI/CD:** GitHub Actions
+- **Hosting:** Render
+
+## 🔄 How the Pipeline Works
 Every time code is pushed to `main`, GitHub Actions automatically:
-1. Sets up Python 3.11
-2. Installs dependencies
-3. Runs the linter (flake8)
+1. Sets up Python 3.9, 3.10, and 3.11 in parallel
+2. Installs all dependencies
+3. Runs the linter (flake8) to enforce code style
 4. Runs all tests (pytest)
+5. Builds a Docker image and pushes it to Docker Hub
+6. Render detects the new image and deploys automatically
+
+## 🏃 Run Locally
+```bash
+git clone https://github.com/robgotherearly/cicd-practice.git
+cd cicd-practice
+pip install -r requirements.txt
+python app.py
+```
+
+## 🐳 Run with Docker
+```bash
+docker pull robgotherearly/cicd-practice:latest
+docker run -p 8000:8000 robgotherearly/cicd-practice:latest
+```
