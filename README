@@ -1,0 +1,15 @@
+# CI/CD Practice Project
+
+A Python project demonstrating a full CI/CD pipeline using GitHub Actions.
+
+## Pipeline Features
+- ✅ Automated testing with pytest on every push
+- ✅ Code style enforcement with flake8
+- ✅ Runs on Ubuntu (cloud) automatically
+
+## How it works
+Every time code is pushed to `main`, GitHub Actions automatically:
+1. Sets up Python 3.11
+2. Installs dependencies
+3. Runs the linter (flake8)
+4. Runs all tests (pytest)
